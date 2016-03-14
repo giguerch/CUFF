@@ -1,0 +1,43 @@
+### Functions to export to users.
+export(
+### String utility functions (strutil.R).
+    "%+%",             # Extends the add function for strings.
+    "%n%",             # Repeats s n time (usage: s %n% n)
+    numtostr,          # Converts a numeric to string. Used by print methods.
+### Description of continuous variables (desc.R, corr.R, mean.table.R, xf.R).
+    desc,              # This function displays N, min, max, mean, sd.
+    corr,              # This function compute correlation matrices and associated tests.
+    means.table        # This function computes Means and SDs for each modality of a
+                       # categorical variables and displays the p-value of an anova table
+                       # based on that categorical variable.
+    xf                 # apply a univariate function to a variable on each bin
+                       # of the categorical variables on the left side of the formula.
+### Description of categorical variables (freq.R, cross.R).
+    freq,              # This function displays frequencies, % and % (including NA) for categorical variables.
+    cross,             # This function creates a crosstab object which displays % and statistical test.
+    xtab,              # Corrects bugs in xtabs associated with NA managements.
+### Complementary utility functions.
+    ## Print methods.
+    print.desc,        # Print function for desc object.
+    print.freq,        # Print function for freq objects.
+    print.cross,       # Print function for freq objects.
+    print.means.table, # Print function for mean.table objects.
+    print.corr,        # Print function fo corr objects.
+    ## sum/mean for a minimum number of valid values (sum.R and cross.R).
+    sum.n,
+    mean.n,
+    Total,             # modification of sum that uses na.rm=TRUE as default
+                       # and replaces a result of NA by 0.
+    ## recode values of a variable (recode.R).
+    recode,
+    ## Converts dates to season from year 2012 to 2025 (season.R).
+    season)
+
+
+### Declare S3 methods.
+S3method(print, desc)
+S3method(print, frequenc)
+S3method(print, cross)
+S3method(print, means.table)
+S3method(print, corr)
+
