@@ -5,7 +5,7 @@ Version: 1.0
 Date: 2016-03-13
 Author: Charles-Édouard Giguère
 Maintainer: Charles-Édouard Giguère <ce.giguere@gmail.com>
-Depends: R (>= 3.2.2), openxlsx, xtable, latex
+Depends: R (>= 3.2.2), openxlsx, xtable
 Description: Fonctions utiles
 License: GPL 3
 Encoding: utf-8
