@@ -14,7 +14,7 @@ export(
     ## Complementary utility functions.
     ## Print methods.
     print.cross,       # Print function for freq objects.
-    print.corr,        # Print function fo corr objects.
+    print.correlation, # Print function fo corr objects.
     ## sum/mean for a minimum number of valid values (sum.R and cross.R).
     Total              # modification of sum that uses na.rm=TRUE as default
                        # and replaces a result of NA by 0.
@@ -23,5 +23,5 @@ export(
 
 ### Declare S3 methods.
 S3method(print, cross)
-S3method(print, corr)
+S3method(print, correlation)
 
