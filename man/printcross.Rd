@@ -1,7 +1,8 @@
-\encoding{latin1}
-\name{cross}
-\alias{cross}
-\title{Crosstabs}
+%% -*- Coding: utf-8 -*-
+\encoding{utf-8}
+\name{printcross}
+\alias{print.cross}
+\title{Crosstabs print methods}
 \description{Functions to display (2 x 2) contingency table}
 \usage{
 \method{print}{cross}(x, ..., test = "chisq.test", export = NULL)
@@ -22,7 +23,7 @@
 \details{
   Export to "pdf", "xlsx" open the crosstabs in the corresponding formats.
 }
-\author{ \enc{Charles-Édouard}{Charles-Edouard} \enc{Giguère}{Giguere} }
+\author{Charles-\enc{Ã‰douard}{Edouard} \enc{GiguÃ¨re}{Giguere} }
 \examples{
 ### example of crosstabs
 cr1 <- cross( ~ N + P, npk)

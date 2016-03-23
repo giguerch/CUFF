@@ -1,7 +1,7 @@
-\encoding{latin1}
+%% -*- Coding: utf-8 -*-
+\encoding{utf-8}
 \name{cross}
 \alias{cross}
-\alias{print.cross}
 \title{Crosstabs}
 \description{Functions to display (2 x 2) contingency table}
 \usage{
@@ -23,7 +23,7 @@ cross(x, ...)
   The \code{xtab} functions corrects the inability to deal with missing
   values in the original \code{xtabs} that comes with R base. 
 }
-\author{ \enc{Charles-Édouard}{Charles-Edouard} \enc{Giguère}{Giguere} }
+\author{Charles-\enc{Ã‰douard}{Edouard} \enc{GiguÃ¨re}{Giguere}}
 \examples{
 ### example of crosstabs
 cr1 <- cross( ~ N + P, npk)

@@ -1,3 +1,5 @@
+%% -*- Coding: utf-8 -*-
+\encoding{utf-8}
 \name{strutils}
 \alias{\%+\%-methods}
 \alias{\%+\%}
@@ -29,8 +31,7 @@ numtostr(x,nch,digits=4)
     Function \code{numtostr} converts numerical vector to a character
     vector using a nice format. 
 }
-\author{ Charles-Édouard Giguère }
-
+\author{Charles-\enc{Ã‰douard}{Edouard} \enc{GiguÃ¨re}{Giguere} }
 \examples{
 "Hello " \%+\% "world."
 cat(" " \%n\%  c(rep(1,9),2) \%+\% 1:10,fill=TRUE)
@@ -41,4 +42,5 @@ numtostr(9048948449.94948,nch=8)
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
 \keyword{paste}
-
+\keyword{char}
+\keyword{character}
