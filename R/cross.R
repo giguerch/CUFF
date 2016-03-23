@@ -60,7 +60,7 @@ print.cross <- function(x, ..., test = "chisq.test", export = NULL){
                             "\\begin{table}[htp!]",
                             "\\centering",
                             "\\pagenumbering{gobble}"))
-        require(xtable)
+        
         xt1 <- xtable(round(addmargins(x$T, FUN = Total, quiet = TRUE), 1),
                       align = paste("l|",paste(rep("r",dim(x$T)[2]),collapse=""),
                                     "|r",sep=""),
@@ -143,7 +143,7 @@ print.cross <- function(x, ..., test = "chisq.test", export = NULL){
     }
     if("xlsx" %in% export){
         wd <- setwd(Sys.getenv("temp"))
-        require(openxlsx)
+        
         wb <- createWorkbook("cross_output.xlsx")
         addWorksheet(wb, "Frequencies")
         addWorksheet(wb, "Row percentages")
