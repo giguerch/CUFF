@@ -221,6 +221,6 @@ xtab <- function(formula, data = parent.frame(), useNA = FALSE,
 
 ### Function that overloads sum with na.rm=TRUE and replaces NA with 0.
 Total = function(x){
-    sx <- sum(x,na.rm=TRUE)
-    ifelse(is.na(sx),0,sx)
+    sx <- sum(x, na.rm = TRUE)
+    ifelse(is.na(sx), 0, sx)
 }

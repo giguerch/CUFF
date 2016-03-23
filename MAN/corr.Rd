@@ -8,7 +8,7 @@
   and cor.test.
 }
 \usage{
-correlation(x, y, method = c("pearson", "kendall", "spearman"),
+correlation(x, y = NULL, method = "pearson",
             alternative = "two.sided", exact = NULL,
             use = "pairwise.complete.obs",
             continuity = FALSE, data = NULL)
