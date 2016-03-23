@@ -5,7 +5,7 @@ export(
     "%n%",             # Repeats s n time (usage: s %n% n)
     numtostr,          # Converts a numeric to string. Used by print methods.
     ## Description of continuous variables (desc.R, corr.R, mean.table.R, xf.R).
-    corr,              # This function compute correlation matrices
+    correlation,              # This function compute correlation matrices
                        #  and associated tests.
     ## Description of categorical variables (freq.R, cross.R).
     cross,             # This function creates a crosstab object which
