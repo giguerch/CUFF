@@ -1,14 +1,16 @@
+%% -*- Coding: utf-8 -*-
+\encoding{utf-8}
 \name{correlation}
 \alias{correlation}
 \alias{print.correlation}
-\title{ Bivariate correlations}
+\title{Bivariate correlations}
 \description{
   This is a function that creates correlation matrix objects that can be
   printed with the corresponding N and p-values. It is a wrapper for cor
   and cor.test.
 }
 \usage{
-correlation(x, y, method = c("pearson", "kendall", "spearman"),
+correlation(x, y = NULL, method = "pearson",
             alternative = "two.sided", exact = NULL,
             use = "pairwise.complete.obs",
             continuity = FALSE, data = NULL)
@@ -24,6 +26,7 @@ correlation(x, y, method = c("pearson", "kendall", "spearman"),
     (\code{two.sided}) test. See \code{help(cor)} for more details.} 
   \item{exact}{Logical value to know if a p.value is exact or
     asymptotic. See \code{help(cor)} for more details.}
+  \item{use}{Methods to deal with missing values.}
   \item{continuity}{Logical value to know if continuity correction
     must be used. See \code{help(cor)} for more details.}
   \item{...}{Unused in this function}
@@ -36,7 +39,7 @@ correlation(x, y, method = c("pearson", "kendall", "spearman"),
   p.value for each correlations.
 }
 
-\author{ \enc{Charles-Édouard Giguère}{Charles-Edouard Giguere} }
+\author{Charles-\enc{Ã‰douard}{Edouard} \enc{GiguÃ¨re}{Giguere} }
 \examples{
 X=rnorm(10)
 Y=rnorm(10)
