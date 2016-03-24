@@ -36,6 +36,7 @@ Total(x)
 }
 \author{Charles-\enc{Édouard}{Edouard} \enc{Giguère}{Giguere} }
 \examples{
+require(CUFF)
 ### example of crosstabs
 xtab( ~ N + P, npk)
 }

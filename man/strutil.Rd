@@ -33,6 +33,7 @@ numtostr(x,nch,digits=4)
 }
 \author{Charles-\enc{Édouard}{Edouard} \enc{Giguère}{Giguere} }
 \examples{
+require(CUFF)
 "Hello " \%+\% "world."
 cat(" " \%n\%  c(rep(1,9),2) \%+\% 1:10,fill=TRUE)
 ### Returns a * because specified length of character is unsufficient. 

@@ -1,6 +1,9 @@
 ### import functions from package openxlsx and xtable.
-import(openxlsx, xtable)
-
+import(xtable)
+import(openxlsx)
+importFrom("stats", addmargins, chisq.test, cor, cor.test,
+           model.frame, na.exclude, na.pass, na.omit, na.fail)
+importFrom("utils", capture.output)
 ### Functions to export to users.
 export(
     ## String utility functions (strutil.R).
