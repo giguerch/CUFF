@@ -8,8 +8,10 @@ Author: Charles-Édouard Giguère
 Maintainer: Charles-Édouard Giguère <ce.giguere@gmail.com>
 Depends: R (>= 3.2.2)
 Imports: openxlsx, xtable
-Description: Utility functions that provide wrapper to R base functions. It makes
-  use of the formula interface. 
+Description: Utility functions that provides wrapper to descriptive base functions
+  like correlation, mean and table . It makes use of the formula interface to pass
+  variables to functions. It also provides operators like to concatenate (%+%), to
+  repeat and manage character vector for nice display.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyLoad: TRUE
