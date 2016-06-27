@@ -2,11 +2,15 @@
 #### Methode pour afficher des frequences de facteur et les conserver dans des listes mais les afficher
 #### dans un format interessant.
 
-freq <- function(x, ..., labels = NULL){
+freq <- function(x, y = NULL, ..., labels = NULL, data = NULL){
     result <- list()
     class(result) <- "frequencies"
-    if(is.matrix(x))
-    {
+    if("formula" %in% class(x)){
+        if(is.null(data) & !is.null(y))
+            data <- y
+        return(freq.formula(x, labels = labels, data=data))
+    }
+    if(is.matrix(x)){
         ## Changer x en data.frame
         x <- as.data.frame(x)
     }
@@ -54,6 +58,18 @@ freq <- function(x, ..., labels = NULL){
     return(result)
 }
 
+freq.formula <- function(x, ..., data = NULL){
+
+    if(length(x) != 2)
+        stop("Invalid formula see help(freq)")
+    else{
+        X <- model.frame(x, data=data)
+        Y <- NULL
+    }
+    freq(x = X, y = Y, ...)
+}
+
+
 print.frequencies <- function(x, ..., toLatex = FALSE){
     test <- labels(x)
     if(!toLatex){ ### default
@@ -97,3 +113,4 @@ print.frequencies <- function(x, ..., toLatex = FALSE){
 
     }
 }
+

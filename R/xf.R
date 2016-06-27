@@ -7,7 +7,7 @@
 xf <- function(formula, data, FUN = NULL, ...,
           subset=NULL, na.action = na.omit, useNA = FALSE){
     if(is.null(FUN)){
-        cat("Aucune fonction spécifiée, la fonction \'mean\' est utilisée.",
+        cat("No function specified, default mean function is used",
             fill=TRUE)
         FUN <- mean
     }
@@ -56,7 +56,6 @@ xf <- function(formula, data, FUN = NULL, ...,
     res.array <- array(dim=terms.length)
     for(n in frm.terms)
         res.exp <- res.exp[order(res.exp[,n]),]
-    return(list(res.array,res.exp))
     res.array[] <- res.exp[,resp]
 
     attr(res.array,"class") <- c("xf","table")
@@ -85,3 +84,4 @@ xf <- function(formula, data, FUN = NULL, ...,
     }
     res.array
 }
+

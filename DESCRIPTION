@@ -3,7 +3,7 @@ Package: CUFF
 Type: Package
 Title: Charles's Utility Function using Formula
 Version: 1.2
-Date: 2016-06-01
+Date: 2016-06-27
 Author: Charles-Édouard Giguère
 Maintainer: Charles-Édouard Giguère <ce.giguere@gmail.com>
 Depends: R (>= 3.2.2)
