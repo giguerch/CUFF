@@ -25,6 +25,7 @@
 }
 \author{Charles-\enc{Édouard}{Edouard} \enc{Giguère}{Giguere} }
 \examples{
+require(CUFF)
 ### example of crosstabs
 cr1 <- cross( ~ N + P, npk)
 print(cr1, test = c("chisq.test", "fisher.test"))

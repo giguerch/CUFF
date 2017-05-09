@@ -41,6 +41,7 @@ correlation(x, y = NULL, method = "pearson",
 
 \author{Charles-\enc{Édouard}{Edouard} \enc{Giguère}{Giguere} }
 \examples{
+require(CUFF)
 X=rnorm(10)
 Y=rnorm(10)
 correlation(cbind(X,Y))
