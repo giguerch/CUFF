@@ -3,7 +3,7 @@
 \alias{sum.n}
 \title{sum weighted on the number of non-missing values}
 \description{Methods that estimates a sum weighted by the number of non-missing values}
-\usage{ sum.n(x,n = 1, ...) }
+\usage{ \method{sum}{n}(x,n = 1, ...) }
 \arguments{
   \item{x}{A vector of values possibly containing missing values.}
   \item{n}{Minimum number of valid values}
