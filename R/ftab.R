@@ -2,7 +2,7 @@
 ### Analyste Charles-Édouard Giguère   ###
 
 ### fonction pour afficher les proportions.
-ftab <- function(xt, margin = seq_along(dim(xt)),fmt = "%d (%5.1f %%)", quiet = FALSE){
+ftab <- function(xt, margin = seq_along(dim(xt)), fmt = "%d (%5.1f %%)", quiet = FALSE){
     ## Si ce n'est pas une table on sort.
     if(!is.table(xt))
         stop("xt must be a table")

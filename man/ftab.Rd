@@ -1,9 +1,12 @@
+%% -*- Coding: utf-8 -*-
+\encoding{utf-8}
 \name{ftab}
+\alias{ftab}
 \title{Fonctions pour ajouter les pourcentages dans les tables}
 \description{La fonction retourne une table avec le contenu en
-  caractères de la frequence et du pourcentage}
+  \enc{caractères}{caracteres} de la \enc{fréquence}{frequence} et du pourcentage}
 \usage{
-ftab(xt, margin = seq_along(dim(xt)), fmt = \"%d (%.1f %%)\", quiet = FALSE){
+ftab(xt, margin = seq_along(dim(xt)), fmt = "\%d (\%5.1f \%\%)", quiet = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
