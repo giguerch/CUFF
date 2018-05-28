@@ -3,6 +3,7 @@
 
 ### Function to create an object of that contains a matrix of bivariate
 ### correlations, their associated N and their p-values.
+
 correlation <- function(x, y = NULL, method = "pearson",
                         alternative = "two.sided", exact = NULL,
                         use = "pairwise.complete.obs",
@@ -153,11 +154,12 @@ correlation.formula <- function(x, ..., data = NULL){
 }
 
 ### Print methods for a correlation object.
-print.corr <- function(x, ..., toLatex = FALSE, cutstr = NULL){
+print.corr <- function(x, ..., toLatex = FALSE, cutstr = NULL, toMarkdown = FALSE){
   
   if(!x$Sym){
     ## Send to print.corr.unsym if the correlation matrix is not symmetric.
-    print.corr.unsym(x, ..., toLatex = toLatex, cutstr = cutstr)
+    print.corr.unsym(x, ..., toLatex = toLatex, cutstr = cutstr,
+                     toMarkdown = toMarkdown)
   }
   else {
     ## Number of variables
@@ -169,11 +171,14 @@ print.corr <- function(x, ..., toLatex = FALSE, cutstr = NULL){
 
     ## if not cutstr takes the value of the largest variable name. 
     if(is.null(cutstr))
-      cutstr <- max(lnom)
+      cutstr <- max(lnom, 7)
     else
-      cutstr <- min(cutstr, max(lnom))
+      cutstr <- max(7 ,min(cutstr, max(lnom)))
+
+    if(toLatex & toMarkdown)
+      stop("Cannot choose both Latex and Markdown format")
     
-    if(!toLatex){
+    if(!toLatex & !toMarkdown){
       ## Estimating necessary space to print correlation.
       ## 13 characters are reserved for margins.
       width <- options()$width - 5 - cutstr
@@ -213,7 +218,7 @@ print.corr <- function(x, ..., toLatex = FALSE, cutstr = NULL){
         }
       }
     }
-    else{
+    else if(toLatex){
       cat("\\begin{tabular}{l |" %+% ("r" %n% (dx - 1)) %+% "}", fill = TRUE)
       cat("\\hline", fill = TRUE)
       cat("& " %+% paste(nom[-length(nom)], collapse=" & ") %+% " \\\\\n")
@@ -232,11 +237,37 @@ print.corr <- function(x, ..., toLatex = FALSE, cutstr = NULL){
       }
       cat("\\end{tabular}", fill = TRUE)
     }
-  }  
-}
+    else if(toMarkdown){
+      formatnom <- sprintf("%%%d.%ds", cutstr, cutstr)
+      nom <- sprintf(formatnom, nom)
+      cat("|" %+% (" " %n% (4 + cutstr)) %+% "|",
+          sprintf(" %s|",nom[1:(dx - 1)]),"\n",
+          sep = "")
+      cat("|:" %+% ("-" %n% (3 + cutstr)) %+% "|",
+          rep(("-" %n% (cutstr )) %+% ":|", dx - 1), "\n", sep = "")
+      for(i in 2:dx){
+        cat(sub("R[(]( +)(.*)[)] [|]", "R(\\2)\\1 |",
+                "|R(" %+% nom[i] %+% ") |" ), sep = "")
+        cat(numtostr(x$R[i, 1:(i-1)], nch = cutstr + 1, digits = 4) %+% "|", sep = "")
+        cat(rep(" " %n% (cutstr + 1) %+% "|", dx - i ), "\n", sep = "")
+        cat(sub("N[(]( +)(.*)[)] [|]", "N(\\2)\\1 |",
+                "|N(" %+% nom[i] %+% ") |"), sep = "")
+        cat(numtostr(x$N[i, 1:(i-1)], nch = cutstr + 1, digits = 0) %+% "|", sep = "")
+        cat(rep(" " %n% (cutstr + 1) %+% "|", dx - i ), "\n", sep = "")
+        cat(sub("P[(]( +)(.*)[)] [|]", "P(\\2)\\1 |",
+                "|P(" %+% nom[i] %+% ") |"), sep = "")
+        ptemp <- ifelse(x$P[i, 1:(i-1)] < 0.0001,"<0.0001",
+                        sprintf("%.4f",x$P[i, 1:(i-1)]))        
+        cat(sprintf(" " %+% formatnom,ptemp) %+% "|", sep = "")
+        cat(rep(" " %n% (cutstr + 1) %+% "|", dx - i ), "\n", sep = "")
+      }      
+    }
+  }
+}  
 
 
-print.corr.unsym <- function(x, ..., toLatex = toLatex, cutstr = NULL){
+print.corr.unsym <- function(x, ..., toLatex = FALSE, cutstr = NULL,
+                             toMarkdown = FALSE){
   ## Variable dimensions.
   dxy <- dim(x$R)
   
@@ -246,12 +277,15 @@ print.corr.unsym <- function(x, ..., toLatex = toLatex, cutstr = NULL){
   lnomx <- nchar(nomx)
   lnomy <- nchar(nomy)
   if(is.null(cutstr))
-    cutstr <- max(c(lnomx,lnomy))
+    cutstr <- max(c(lnomx,lnomy), 7)
   else
-    cutstr <- min(cutstr, max(c(lnomx,lnomy)))
+    cutstr <- max(7, min(cutstr, max(c(lnomx,lnomy))))
+
+  if(toLatex & toMarkdown)
+    stop("Cannot choose both Latex and Markdown format")
   
   ## Standard print
-  if(!toLatex){
+  if(!toLatex & !toMarkdown){
     
     ## Estimating necessary space to print correlation.
     ## 5 + cutstr characters are reserved for margins.
@@ -294,7 +328,7 @@ print.corr.unsym <- function(x, ..., toLatex = toLatex, cutstr = NULL){
     }
   }
   ## Print into a latex tabular environment. For use with knitr/Sweave.
-  else{
+  else if (toLatex){
     cat("\\begin{tabular}{l |" %+% ("r" %n% (dxy[2])) %+% "}", fill = TRUE)
     cat("\\hline", fill = TRUE)
     cat("& " %+% paste(nomy, collapse=" & ") %+% " \\\\\n")
@@ -313,4 +347,30 @@ print.corr.unsym <- function(x, ..., toLatex = toLatex, cutstr = NULL){
     }
     cat("\\end{tabular}", fill = TRUE)
   }
+  else if(toMarkdown){
+    dx <- length(nomx)
+    dy <- length(nomy)
+    formatnom <- sprintf("%%%d.%ds", cutstr, cutstr)
+    nomx <- sprintf(formatnom, nomx)
+    nomy <- sprintf(formatnom, nomy)
+    cat("|" %+% (" " %n% (4 + cutstr)) %+% "|", sprintf(" %s|",nomy),"\n",
+        sep = "")
+    cat("|:" %+% ("-" %n% (3 + cutstr)) %+% "|",
+        rep(("-" %n% (cutstr )) %+% ":|", dy), "\n", sep = "")
+    for(i in 1:dx){
+      cat(sub("R[(]( +)(.*)[)] [|]", "R(\\2)\\1 |",
+              "|R(" %+% nomx[i] %+% ") |" ), sep = "")    
+      cat(numtostr(x$R[i, 1:dy], nch = cutstr + 1, digits = 4) %+% "|", "\n", sep = "")
+      cat(sub("N[(]( +)(.*)[)] [|]", "N(\\2)\\1 |",
+              "|N(" %+% nomx[i] %+% ") |"), sep = "")
+      cat(numtostr(x$N[i, 1:dy], nch = cutstr + 1, digits = 0) %+% "|", "\n", sep = "")
+
+      cat(sub("P[(]( +)(.*)[)] [|]", "P(\\2)\\1 |",
+              "|P(" %+% nomx[i] %+% ") |"), sep = "")
+      ptemp <- ifelse(x$P[i, 1:dy] < 0.0001,
+                      "<0.0001", sprintf("%.4f",x$P[i, 1:dy]))        
+      cat(sprintf(" " %+% formatnom,ptemp) %+% "|", "\n", sep = "")
+    }      
+  }
 }
+  
