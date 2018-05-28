@@ -29,13 +29,14 @@ export(
     ## Description of categorical variables (freq.R, cross.R).
     cross,             # This function creates a crosstab object which
                        # displays % and statistical test.
+    ftab,              # This function adds percentage to a table for display in report.
     xf,                # applies a function across a list of factors.
     xtab,              # Corrects bugs in xtabs associated with NA managements.
     freq,              # displays % of a categorical variable. 
     ## Complementary utility functions.
     ## Print methods.
     print.cross,       # Print function for freq objects.
-    print.correlation, # Print function for corr objects.
+    print.corr,        # Print function for corr objects.
     print.frequencies, # Print function for frequencies objects.
     ## Compute sums.
     sum.n,             # sumn for a minimum number of valid values.
@@ -46,7 +47,7 @@ export(
 
 ### Declare S3 methods.
 S3method(print, cross)
-S3method(print, correlation)
+S3method(print, corr)
 S3method(print, frequencies)
 S3method(sum,n)
 
