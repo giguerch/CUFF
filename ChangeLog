@@ -1,3 +1,5 @@
+2018-06-07 Charles-Édouard Giguère <ce.giguere@gmail.com>
+	* Added the meansd function to display mean and sd in a string.
 2018-05-27 Charles-Édouard Giguère <ce.giguere@gmail.com>
 	* Remove the annoying behavior of only printing the 8 first character of the correlation matrix.
 	* Added an option to cut the variable if you feel like it. Useful for long variable names.
