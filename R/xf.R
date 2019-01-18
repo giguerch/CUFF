@@ -5,12 +5,13 @@
 ### via a formula. It works like aggregate but it returns a table instead
 ### of a list. 
 xf <- function(formula, data, FUN = NULL, ...,
-          subset=NULL, na.action = na.omit, useNA = FALSE){
+          subset=NULL, na.action = na.omit, useNA = FALSE, addmargins = TRUE){
     if(is.null(FUN)){
         cat("No function specified, default mean function is used",
             fill=TRUE)
         FUN <- mean
     }
+    N <- dim(data)[1]
     md.frm <- model.frame(formula,data)
     frm.terms <- attr(terms(formula),"term.labels")
     for(t in frm.terms){
@@ -18,6 +19,20 @@ xf <- function(formula, data, FUN = NULL, ...,
             data[,t] <- addNA(factor(data[,t]),ifany=TRUE)
         else
             data[,t] <- factor(data[,t],exclude=c(NA,NaN))
+    }
+    data = data[names(md.frm)]
+    if(addmargins & length(frm.terms) > 0) {
+      data = rbind(data, data)
+      data[-1] <- lapply(data[-1],
+                           function(x){
+                             if(is.factor(x))
+                               factor(c(levels(x)[x[1:N]], rep("Total", N)),
+                                      levels = c(levels(x), "Total"))
+                             else
+                               factor(c(x[1:N], rep("Total",N)),
+                                      levels = c(sort(unique(x[1:N])),
+                                                 "Total"))
+                           })
     }
     res <- do.call("aggregate",
                    list(formula=formula, data=data, FUN=FUN,
@@ -84,4 +99,3 @@ xf <- function(formula, data, FUN = NULL, ...,
     }
     res.array
 }
-
