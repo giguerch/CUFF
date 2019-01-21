@@ -1,6 +1,7 @@
 %% -*- Coding: utf-8 -*-
 \encoding{utf-8}
 \name{pv}
+\alias{pv}
 \title{Format p-values}
 \description{
   This is a function that format p-values for publication.

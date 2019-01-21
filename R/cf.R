@@ -80,7 +80,7 @@ cf <- function(x, addci = TRUE, pv.style = 1, signif = 2,
                       x$statistic, x$parameter, x$p.value, row.names = "")
     nn1 <- sub("^mean in group (.*)|mean of (.*)$", "mean(\\1\\2)",              
               names(x$estimate))
-    names(xcf) <- c(nn, "Diff.", "t", "df", "P(>|t|)")
+    names(xcf) <- c(nn1, "Diff.", "t", "df", "P(>|t|)")
     if(length(tabformat) ==  1){
         xcf[,1:4] <- sapply(xcf[,1:4],
                             function(x) sprintf(tabformat, x))
@@ -129,7 +129,5 @@ cf <- function(x, addci = TRUE, pv.style = 1, signif = 2,
   }
   as.data.frame(xcf)
 }
-
-cf(lmer1, addci = F)
 
 

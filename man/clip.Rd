@@ -1,7 +1,7 @@
 %% -*- Coding: utf-8 -*-
 \encoding{utf-8}
 \name{clip}
-\alias{clipboard}
+\alias{clip}
 \title{Send to clipboard}
 \description{
   This is a function that sends a table-like object to the clipboard to

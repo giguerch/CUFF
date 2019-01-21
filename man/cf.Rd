@@ -1,16 +1,14 @@
 %% -*- Coding: utf-8 -*-
 \encoding{utf-8}
 \name{cf}
+\alias{cf}
 \title{Extract and format coefficients table}
 \description{
   This function extract coefficients tables from common statistical
   model (lm/glm/lme/lmer/t-test) and format them. 
 }
 \usage{
-cf(x, addci = TRUE, pv.style = 1, signif = 2,
-               expcf = ifelse("glm" %in% class(x)  &
-                              family(x)$family == "binomial",
-                              TRUE, FALSE), ...)
+cf(x, addci = TRUE, pv.style = 1, signif = 2, expcf, ...)
 }
 \arguments{
   \item{x}{x is a lm/glm/lme/lmer/t.test model}
@@ -18,7 +16,7 @@ cf(x, addci = TRUE, pv.style = 1, signif = 2,
     interval to the output. True by default.}
   \item{pv.style}{Integer specifying the style (1 or 2) of p-value
     formatting. See \code{help(pv)} for details}
-  \item{signi}{Either an integer specifying the number of significant
+  \item{signif}{Either an integer specifying the number of significant
     digits or a dimension 3 vector for respectively the estimate,
     standard error and t-value}
   \item{expcf}{Logical value that tells R to add exponentiated value of

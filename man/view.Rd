@@ -1,6 +1,7 @@
 %% -*- Coding: utf-8 -*-
 \encoding{utf-8}
 \name{view}
+\alias{view}
 \title{view methods}
 \description{
   Wrapper to DT::datatable.

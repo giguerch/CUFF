@@ -5,13 +5,17 @@ importFrom("stats",
            addmargins,
            aggregate,
            chisq.test,
+           confint,
+           coef,
            cor,
            cor.test,
+           family,
            model.frame,
            na.exclude,
            na.pass,
            na.omit,
            na.fail,
+           sd,
            terms)
 
 importFrom("utils",           
@@ -20,6 +24,13 @@ importFrom("utils",
 
 importFrom("DT",
            datatable)
+
+importFrom("nlme",
+           intervals)
+
+importFrom("lmerTest",
+           as_lmerModLmerTest)
+
 
 ### Functions to export to users.
 export(
