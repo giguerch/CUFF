@@ -1,4 +1,4 @@
-2019-01-19 Charles-Édouard Giguère <ce.giguere@gmail.com>
+2019-01-21 Charles-Édouard Giguère <ce.giguere@gmail.com>
 	* Make the function view to use DT::datatable as a viewer like in Rstudio.
 	* Added the function clip that exports any table/data.frame/matrix like output
 	  to the clipboard.
