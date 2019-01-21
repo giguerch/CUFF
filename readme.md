@@ -1,7 +1,7 @@
 ----
 title: Series of utility functions in R using formulas. 
 author: Charles-Édouard Giguère
-date: 2018-05-27
+date: 2018-06-07
 
 ---
 
@@ -21,4 +21,6 @@ date: 2018-05-27
    functions use the stringi package.
    
 5. sum.n: sum weighted by the number of non missing values. 
+
+6. meansd: mean and sd displayed in a string.
 
