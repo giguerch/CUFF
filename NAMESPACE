@@ -62,8 +62,9 @@ export(
   clip,              # Sends table-like format to clipboard for insert in other programs.
   cf,                # extract coef from common stats models with optional c.i.
   pv,                # format pv as in APA style guide version 6.
-  view               # function that send a table-like object to DT::datatable
-   
+  view,              # function that send a table-like object to DT::datatable
+  xyboth             # An utility function that show the intersection of two vectors
+                     # of indices (list/data.frame of vectors).
 )
 
 

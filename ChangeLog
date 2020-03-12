@@ -1,3 +1,5 @@
+2020-03-12 Charles-Édouard Giguère <ce.giguere@gmail.com>
+	* Added an utility function to visually see the match between ID, in x/y/both.
 2019-04-01 Charles-Édouard Giguère <ce.giguere@gmail.com>
 	* Correction to the cf methods to work with paired t-test.
 2019-01-21 Charles-Édouard Giguère <ce.giguere@gmail.com>
