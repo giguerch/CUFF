@@ -1,3 +1,4 @@
+
 ### import functions from package openxlsx and xtable.
 import(xtable)
 import(openxlsx)
@@ -37,6 +38,7 @@ export(
   ## String utility functions (strutil.R).
   "%+%",             # Extends the add function for strings.
   "%n%",             # Repeats s n time (usage: s %n% n)
+  "%xyb%",           # operator alias for xyboth
   numtostr,          # Converts a numeric to string. Used by print methods.
   ## Description of continuous variables (desc.R, corr.R, mean.table.R, xf.R).
   correlation,       # This function compute correlation matrices
