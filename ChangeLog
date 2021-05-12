@@ -1,3 +1,7 @@
+2021-05-12 Charles-Édouard Giguère <ce.giguere@gmail.com>
+	* Added model glmer to CUFF::cf.
+2020-09-14 Charles-Édouard Giguère <ce.giguere@gmail.com>
+	* Remove dependency on openxlsx and replace with xlsx.
 2020-03-12 Charles-Édouard Giguère <ce.giguere@gmail.com>
 	* Added an utility function to visually see the match between ID, in x/y/both.
 2019-04-01 Charles-Édouard Giguère <ce.giguere@gmail.com>

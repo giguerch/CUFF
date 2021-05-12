@@ -1,6 +1,7 @@
 %% -*- Coding: utf-8 -*-
 \encoding{utf-8}
 \name{xyboth}
+\alias{xyboth}
 \alias{\%xyb\%}
 \title{Utility function to match 2 indices}
 \description{

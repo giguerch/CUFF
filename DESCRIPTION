@@ -3,11 +3,11 @@ Package: CUFF
 Type: Package
 Title: Charles's Utility Function using Formula
 Version: 1.7
-Date: 2020-03-12
+Date: 2020-09-16
 Author: Charles-Édouard Giguère
 Maintainer: Charles-Édouard Giguère <ce.giguere@gmail.com>
 Depends: R (>= 3.2.2)
-Imports: openxlsx, xtable, DT, lmerTest, nlme
+Imports: xlsx, xtable, DT, lmerTest, nlme
 Description: Utility functions that provides wrapper to descriptive base functions
   like cor, mean and table.  It makes use of the formula interface to pass
   variables to functions.  It also provides operators to concatenate (%+%), to

@@ -1,7 +1,7 @@
 
 ### import functions from package openxlsx and xtable.
 import(xtable)
-import(openxlsx)
+import(xlsx)
 importFrom("stats",
            addmargins,
            aggregate,
