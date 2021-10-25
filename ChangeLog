@@ -1,3 +1,5 @@
+2021-09-22 Charles-Édouard Giguère <ce.giguere@gmail.com>
+	* Added export = "tex" to print.cross.
 2021-05-12 Charles-Édouard Giguère <ce.giguere@gmail.com>
 	* Added model glmer to CUFF::cf.
 2020-09-14 Charles-Édouard Giguère <ce.giguere@gmail.com>

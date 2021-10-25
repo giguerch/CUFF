@@ -154,7 +154,7 @@ cf <- function(x, addci = TRUE, pv.style = 1, signif = 2,
         }    
     }
     ## glmer
-    else if(inherits(xclass[1], "glmerMod") ){
+    else if(inherits(x, "glmerMod") ){
         tabformat <- sprintf("%%.%if",signif)
         xcf <- summary(x)$coefficient
         xcf <- as.data.frame(xcf)
