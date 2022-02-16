@@ -1,10 +1,9 @@
 ----
 title: Series of utility functions in R using formulas. 
 author: Charles-Édouard Giguère
-date: 2018-06-07
+date: 2019-04-01
 
 ---
-
 
 # CUFF: Charles utility functions using formulas 
 
@@ -24,3 +23,18 @@ date: 2018-06-07
 
 6. meansd: mean and sd displayed in a string.
 
+7. cf: Extract formated coefficient. 
+
+8. clip: put a matrix-like object into clipboard.
+
+9. ftab: add percentages to a table to get percentages and 
+         frequencies in the same output.
+
+10. meansd: function that combines mean and sd in the same output.
+            To be used with xf. 
+
+11. view: view matrix-like objects in a browser like in R-studio. 
+
+12. xf: Function similar to xtabs but applied to a continuous variable. 
+        This function applies a function to a variable across levels of 
+		one or more categorical variable. 
