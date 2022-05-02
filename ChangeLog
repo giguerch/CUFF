@@ -1,3 +1,5 @@
+2022-05-01 Charles-Édouard Giguère <ce.giguere@gmail.com>
+	* Change method clip to use clipr package because 
 2022-02-14 Charles-Édouard Giguère <ce.giguere@gmail.com>
 	* Adjustment for the changes in the new formula parameters.
 	* Added to_csv to export data into csv with formats.
