@@ -2,7 +2,7 @@ Note: -*- Encoding: utf-8 -*-
 Package: CUFF
 Type: Package
 Title: Charles's Utility Function using Formula
-Version: 1.9
+Version: 1.10
 Date: 2023-03-22
 Author: Charles-Édouard Giguère
 Maintainer: Charles-Édouard Giguère <ce.giguere@gmail.com>
