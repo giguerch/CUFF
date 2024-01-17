@@ -1,9 +1,17 @@
 ----
 title: Series of utility functions in R using formulas. 
-author: Charles-Édouard Giguère
+author: Charles-Ã‰douard GiguÃ¨re
 date: 2019-04-01
 
 ---
+
+<!-- badges: start -->
+[![Build Status](https://api.travis-ci.com/CUFF/CUFF.svg?branch=master)](https://app.travis-ci.com/github/CUFF/CUFF)
+[![Codecov test coverage](https://codecov.io/gh/CUFF/OpenMx/branch/master/graph/badge.svg)](https://app.codecov.io/gh/CUFF/OCUFF?branch=master)
+[![cran version](http://www.r-pkg.org/badges/version/CUFF)](https://cran.r-project.org/package=CUFF)
+[![Monthly Downloads](https://cranlogs.r-pkg.org/badges/CUFF)](https://cranlogs.r-pkg.org/badges/CUFF)
+[![Total Downloads](https://cranlogs.r-pkg.org/badges/grand-total/CUFF)](https://cranlogs.r-pkg.org/badges/grand-total/CUFF)
+<!-- badges: end -->
 
 # CUFF: Charles utility functions using formulas 
 
