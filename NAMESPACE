@@ -62,7 +62,7 @@ export(
   ## Print methods.
   print.cross,       # Print function for freq objects.
   print.corr,        # Print function for corr objects.
-  print.cont.desc    # Print function for cont.desc objects.
+  print.cont.desc,   # Print function for cont.desc objects.
   print.frequencies, # Print function for frequencies objects.
   ## Compute sums.
   sum.n,             # sumn for a minimum number of valid values.
