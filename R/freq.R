@@ -67,7 +67,7 @@ freq.formula <- function(x, ..., data = NULL){
     if(length(x) != 2)
         stop("Invalid formula see help(freq)")
     else{
-        X <- model.frame(x, data=data)
+        X <- model.frame(x, data=data, na.action = na.pass)
         Y <- NULL
     }
     freq(x = X, y = Y, ...)

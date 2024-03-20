@@ -48,6 +48,7 @@ export(
   correlation,       # This function compute correlation matrices
   #  and associated tests.
   column_types,      # Finds column formats to export data.
+  cont.desc,         # describe continuous variables.
   ## Description of categorical variables (freq.R, cross.R).
   cross,             # This function creates a crosstab object which
                      # displays % and statistical test.
@@ -61,6 +62,7 @@ export(
   ## Print methods.
   print.cross,       # Print function for freq objects.
   print.corr,        # Print function for corr objects.
+  print.cont.desc    # Print function for cont.desc objects.
   print.frequencies, # Print function for frequencies objects.
   ## Compute sums.
   sum.n,             # sumn for a minimum number of valid values.
@@ -81,6 +83,6 @@ export(
 ### Declare S3 methods.
 S3method(print, cross)
 S3method(print, corr)
+S3method(print, cont.desc)
 S3method(print, frequencies)
 S3method(sum,n)
-

@@ -1,3 +1,6 @@
+2024-03-20 Charles-Édouard Giguère <ce.giguere@gmail.com>
+	* Added a function to describe continous variables.
+	* correction to freq (na misscount when using formula). 
 2023-03-22 Charles-Édouard Giguère <ce.giguere@gmail.com>
 	* Change to the corr method to correct an error in the symmetry of
 	the P matrix.
