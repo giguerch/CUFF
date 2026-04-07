@@ -72,12 +72,12 @@ cont.desc.formula <- function(x, ..., data = NULL){
 }
 
 
-print.cont.desc <- function(x, ...){
+print.cont.desc <- function(x, ..., mean.fmt = "%.2f", sd.fmt = "%.2f"){
     x_fmt <- as.data.frame(x)
     x_fmt[,1] <- sprintf("%d",   x_fmt[,1])
     x_fmt[,2] <- sprintf("%d",   x_fmt[,2])
-    x_fmt[,3] <- sprintf("%.2f", x_fmt[,3])
-    x_fmt[,4] <- sprintf("%.2f", x_fmt[,4])
+    x_fmt[,3] <- sprintf(mean.fmt, x_fmt[,3])
+    x_fmt[,4] <- sprintf(sd.fmt, x_fmt[,4])
     print(x_fmt)
     invisible(x_fmt)
 }

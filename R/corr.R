@@ -8,6 +8,12 @@ correlation <- function(x, y = NULL, method = "pearson",
                         use = "pairwise.complete.obs",
                         continuity = FALSE, data = NULL){
 
+    if(inherits(x, "tbl_df") | is.numeric(x))
+        x = as.data.frame(x)
+
+    if(inherits(y, "tbl_df") | is.numeric(y))
+        y = as.data.frame(y)
+    
     if("formula" %in% class(x)){
         if(is.null(data) & !is.null(y))
             data <- y
